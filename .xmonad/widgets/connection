@@ -37,7 +37,7 @@ receiving () {
     fi
 
     if [ ! $label == "" ]; then
-        echo " <fc=$color>In: $label mB/s</fc>"
+        echo " <fc=$color><icon=/home/kreiz/.xmonad/icons/in.xbm/> $label mB/s</fc>"
     fi
 }
 
@@ -77,7 +77,7 @@ sending () {
     fi
 
     if [ ! $label == "" ]; then
-        echo " <fc=$color>Out: $label mB/s</fc>"
+        echo " <fc=$color><icon=/home/kreiz/.xmonad/icons/out.xbm/> $label mB/s</fc>"
     fi
 }
 
@@ -89,14 +89,14 @@ sending=$(sending $interface)
 network="$receiving$sending"
 
 if [ ! -z "$network" -a "$network" != " " ]; then
-    echo "|$network"
+    echo "$network"
     exit 0
 elif [ $test -eq 1 ]; then
   label="Online"
-  color="#008899"
+  color="#5cf2fd"
 else
   label="Offline"
   color="#aa3300"
 fi
 
-echo "| <fc=$color>$label</fc>"
+echo "<fc=$color>$label</fc>"
