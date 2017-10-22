@@ -4,50 +4,49 @@ Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
 
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.url-select.launcher: firefox
-URxvt.url-select.underline: true
-URxvt.keysym.M-u: perl:url-select:select_next
+! Clipboard
+URxvt.perl-ext-common: default,keyboard-select,matcher
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
-URxvt.keysym.M-w: perl:clipboard:copy
-URxvt.keysym.C-p: perl:clipboard:paste
-URxvt.keysym.C-M-c: perl:clipboard:paste_escaped
+URxvt.clipboard.autocopy: true
 
+! Scrollbar
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
 URxvt.scrollBar:           false
 URxvt.saveLines:           4096
+
+! Style
 URxvt.internalBorder:      3
 URxvt.externalBorder:      0
 URxvt.highlightSelection:  true
-URxvt.letterSpace: 0
+URxvt.letterSpace: 1
 URxvt.lineSpace: 4
+
+! lol
 URxvt.loginShell: true
 URxvt*termName: rxvt-unicode-256color
 
-URxvt.saveLines: 10000
+! Fonts
 URxvt.xftAntialias: true
-URxvt.font: xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true, xft:Noto Emoji:pixelsize=13, xft:Symbola
-URxvt.boldFont:  xft:Monaco:style=regular:pixelsize=13:antialias=true,hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.italicFont: xft:Monaco:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
-URxvt.boldItalicFont: xft:Monaco:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.font: xft:Bitstream Vera Sans Mono:style=regular:pixelsize=13:antialias=true,hinting=true, xft:DejaVu Sans Mono:pixelsize=13:antialias=true,hinting=true, xft:Bitstream Vera Sans Mono:pixelsize=13, xft:DejaVu Sans Mono for Powerline:pixelsize=12
+URxvt.boldFont:  xft:Bitstream Vera Sans Mono:style=bold:pixelsize=13:antialias=true,hinting=true, xft:DejaVu Sans Mono:pixelsize=13:antialias=true,hinting=true
+URxvt.italicFont: xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
+URxvt.boldItalicFont: xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true:hinting=true, xft:dejavu sans mono:pixelsize=13:antialias=true,hinting=true
 
-URxvt.urlLauncher: w3
+! URL
+URxvt.url-launcher: firefox
 URxvt.matcher.button: 1
-
-!URxvt.perl-ext:      default,url-select
-!URxvt.keysym.M-u:    perl:url-select:select_next
-!URxvt.underlineURLs: true
-
-!URxvt.depth: 32
-!URxvt.background: [95]#000000
-
+URxvt*underlineColor: yellow
 URxvt.depth: 32
-URxvt.background: [75]#000000
 
-!URxvt.transparent:true
-!URxvt.shading: 14
-
+! ?
 Urxvt.secondaryScroll:  true
+
+! Appareance
+URxvt.transparent:true
+URxvt.shading: 14
 
 !
 ! Color
@@ -65,36 +64,44 @@ dzen2.font:       -*-fixed-*-*-*-*-*-*-*-*-*-*-*-*
 dzen2.foreground: #22EE11
 dzen2.background: black
 
-
-
-
-! Solarized color scheme for the X Window System
-!
-! http://ethanschoonover.com/solarized
-
-URxvt.background:              [95]#002b36
 URxvt.borderColor:             [95]#002b36
-URxvt.scrollColor:             [95]#002b36
-URxvt.foreground:              #839496
-URxvt.fading:                  40
+URxvt.fading:                  15
 URxvt.fadeColor:               #002b36
-URxvt.cursorColor:             #93a1a1
 URxvt.pointerColorBackground:  #586e75
 URxvt.pointerColorForeground:  #93a1a1
 
-*color0:                  #a0a7a9
-*color1:                  #dc322f
-*color2:                  #859900
-*color3:                  #b58900
-*color4:                  #26b6d2
-*color5:                  #d33682
-*color6:                  #2aa198
-*color7:                  #eee8d5
-*color9:                  #cb4b16
-*color8:                  #7f9ba2
-*color10:                 #b6c3c8
-*color11:                 #e7ebec
-*color12:                 #83ede2
-*color13:                 #6c71c4
-*color14:                 #e7eaea
-*color15:                 #fdf6e3
+! special
+*background:#12171d
+*foreground:#879ebb
+
+!black
+*color0:#93908b
+*color8:#93908b
+
+!red
+*color1:#c6dee0
+*color9:#c6dee0
+
+!green
+*color2:#528c8a
+*color10:#528c8a
+
+!yellow
+*color3:#8299df
+*color11:#8299df
+
+!blue
+*color4:#a8bfcd
+*color12:#a8bfcd
+
+!magenta
+*color5:#c6dee0
+*color13:#c6dee0
+
+!cyan
+*color6:#528c8a
+*color14:#528c8a
+
+!white
+*color7:#8299df
+*color15:#8299df
