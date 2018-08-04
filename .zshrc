@@ -80,3 +80,5 @@ alias la="ls --almost-all"
 alias lla=" exa -la"
 alias ip="ip -c address show"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

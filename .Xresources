@@ -21,7 +21,7 @@ URxvt.saveLines:           4096
 URxvt.internalBorder:      3
 URxvt.externalBorder:      0
 URxvt.highlightSelection:  true
-URxvt.letterSpace: 1
+URxvt.letterSpace: 0
 URxvt.lineSpace: 4
 
 ! lol
@@ -71,37 +71,74 @@ URxvt.pointerColorBackground:  #586e75
 URxvt.pointerColorForeground:  #93a1a1
 
 ! special
-*background:#12171d
-*foreground:#879ebb
+!*background:#12171d
+!*foreground:#879ebb
 
 !black
-*color0:#93908b
-*color8:#93908b
+!*color0:#93908b
+!*color8:#93908b
 
 !red
-*color1:#c6dee0
-*color9:#c6dee0
+!*color1:#c6dee0
+!*color9:#c6dee0
 
 !green
-*color2:#528c8a
-*color10:#528c8a
+!*color2:#528c8a
+!*color10:#528c8a
 
 !yellow
-*color3:#8299df
-*color11:#8299df
+!*color3:#8299df
+!*color11:#8299df
 
 !blue
-*color4:#a8bfcd
-*color12:#a8bfcd
+!*color4:#a8bfcd
+!*color12:#a8bfcd
 
 !magenta
-*color5:#c6dee0
-*color13:#c6dee0
+!*color5:#c6dee0
+!*color13:#c6dee0
 
 !cyan
-*color6:#528c8a
-*color14:#528c8a
+!*color6:#528c8a
+!*color14:#528c8a
 
 !white
-*color7:#8299df
-*color15:#8299df
+!*color7:#8299df
+!*color15:#8299df
+
+! basic
+*foreground: #bbbbbb
+*background: #112233
+*cursorColor: #bb9900
+
+!black
+*color0:  #445566
+*color8:  #445566
+
+!red
+*color1:  #dd3366
+*color9:  #dd3366
+
+!green
+*color2:  #99aa00
+*color10: #99aa00
+
+!yellow
+*color3:  #bb9900
+*color11: #bb9900
+
+!blue
+*color4:  #3399dd
+*color12: #3399dd
+
+!magenta
+*color5:  #6666dd
+*color13: #6666dd
+
+!cyan
+*color6:  #339999
+*color14: #339999
+
+!white
+*color7:  #bbbbbb
+*color15: #bbbbbb

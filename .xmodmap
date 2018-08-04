@@ -1,12 +1,9 @@
-remove Lock = Caps_Lock
-remove Control = Control_R
-keysym Caps_Lock = Control_R
-add Lock = Caps_Lock
-add Control = Control_R 
-keycode 96 = Insert
+clear lock
 keycode 108 = Mode_switch
+keycode 66  = Escape NoSymbol Escape
 keycode 30 = u U uacute Uacute
 keycode 26 = e E eacute Eacute
 keycode 31 = i I iacute Iacute
 keycode 38 = a A aacute Aacute
 keycode 32 = o O oacute Oacute
+

@@ -5,6 +5,7 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.Themes
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.SetWMName
 
 import System.IO
 import System.Posix.Env
@@ -45,8 +46,8 @@ myKeys =
 	-- Navigation
 	, ((mod4Mask, xK_Down), nextWS)
 	, ((mod4Mask, xK_Up), prevWS)
-	, ((mod4Mask, xK_Right), onNextNeighbour W.view)
-	, ((mod4Mask, xK_Left), onPrevNeighbour W.view)
+--	, ((mod4Mask, xK_Right), onNextNeighbour W.view)
+--	, ((mod4Mask, xK_Left), onPrevNeighbour W.view)
        -- multimedia keys
        -- XF86AudioLowerVolume
        , ((0            , 0x1008ff11), spawn "amixer set Master 5%-")
@@ -93,16 +94,10 @@ myTabConfig = def {
 }
 
 -- Layouts
-tall = spacing 5 $ Tall 1 (3/100) (488/792)
+tall = smartBorders $ spacing 5 $ Tall 1 (3/100) (488/792)
 full = noBorders Full
 tb = noBorders $ tabbed shrinkText myTabConfig
-sc = Cross (1/2) (1/100)
-myLayoutHook = avoidStruts $ (tall ||| Mirror tall ||| tb  ||| sc) 
-
--- Startup
-myStartupHook = do
-	spawnOnce "setup_monitors"
-	spawnOnce "urxvt"
+myLayoutHook = avoidStruts $ tall ||| Mirror tall ||| tb ||| full 
 
 main = do
     xmproc <- spawnPipe "xmobar $HOME/.xmonad/xmobar.hs"
@@ -110,7 +105,7 @@ main = do
 	focusFollowsMouse = False,
         -- basic conf
         modMask            = mod4Mask,
-        terminal           = "urxvt",
+        terminal           = "terminology",
         borderWidth        = 1,
         workspaces         = ["home","www","3", "4", "5", "6", "7", "8", "9"],
         -- colors
@@ -118,8 +113,8 @@ main = do
         focusedBorderColor = "#eddcd3",
         -- hooks
         manageHook = myManageHook <+> manageDocks,
-        layoutHook = windowArrange $ myLayoutHook ||| full, 
-	startupHook = myStartupHook,
+        layoutHook = windowArrange $ myLayoutHook, 
+				startupHook = setWMName "LG3D",
         logHook = dynamicLogWithPP $ xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "#04eed1" "" . shorten 100
